@@ -1,0 +1,132 @@
+<%--
+Plantilla de máscara predeterminada. Las siguientes máscaras se proporcionan sólo como ejemplos.
+
+1. Máscara de control con nombre. SkinId debería definirse de forma única porque
+no se permite que haya varios SkinId por tipo de control en el mismo tema.
+
+<asp:GridView runat="server" SkinId="gridviewSkin" BackColor="White" >
+   <AlternatingRowStyle BackColor="Blue" />
+</asp:GridView>
+
+2. Máscara predeterminada. Skinid no está definido Sólo se permite 
+   una máscara de control por tipo de control en el mismo tema.
+
+<asp:Image runat="server" ImageUrl="~/images/image1.jpg" />
+--%>
+
+
+<telerik:RadTextBox runat="server" Width="100%" CssClass="pscMaxWidth" Skin="Silk"></telerik:RadTextBox>
+<telerik:RadDatePicker runat="server" Width="100%" CssClass="pscMaxWidth" Skin="Silk"></telerik:RadDatePicker>
+<telerik:RadNumericTextBox runat="server" Width="100%" CssClass="pscMaxWidth" Skin="Silk"></telerik:RadNumericTextBox>
+<telerik:RadComboBox runat="server" Width="100%" Skin="Silk"></telerik:RadComboBox>
+
+<telerik:RadTabStrip runat="server" Width="100%" Skin="Silk"></telerik:RadTabStrip>
+
+<telerik:RadButton runat="server" Width="100%" Skin="Silk" Font-Size="15px" Font-Names="Segoe UI" CssClass="pscBoton" ToolTip="Iniciar Sesión" SkinID="pscBotonLogin">
+    <ContentTemplate>
+        <span class="fa fa-sign-in"></span>&nbsp;&nbsp;Iniciar Sesión
+    </ContentTemplate>
+</telerik:RadButton>
+
+<telerik:RadButton runat="server" Width="100%" Skin="Silk" Font-Size="15px" Font-Names="Segoe UI" CssClass="pscBoton" ToolTip="Buscar" SkinID="pscBotonBuscar">
+    <ContentTemplate>
+        <span class="fa fa-search"></span>&nbsp;&nbsp;Buscar
+    </ContentTemplate>
+</telerik:RadButton>
+
+<telerik:RadButton runat="server" Width="100%" Skin="Silk" Font-Size="15px" Font-Names="Segoe UI" CssClass="pscBoton" ToolTip="Guardar" SkinID="pscBotonGuardar">
+    <ContentTemplate>
+        <span class="fa fa-floppy-o"></span>&nbsp;&nbsp;Guardar
+    </ContentTemplate>
+</telerik:RadButton>
+
+<telerik:RadButton runat="server" Width="100%" Skin="Silk" Font-Size="15px" Font-Names="Segoe UI" CssClass="pscBoton" ToolTip="Otro" SkinID="pscBotonOtro">
+    <ContentTemplate>
+        <span class="fa fa-check-square"></span>&nbsp;&nbsp;Otro
+    </ContentTemplate>
+</telerik:RadButton>
+
+<telerik:RadButton runat="server" Width="100%" Skin="Silk" Font-Size="15px" Font-Names="Segoe UI" CssClass="pscBoton" ToolTip="Adicionar" SkinID="pscBotonAdicionar">
+    <ContentTemplate>
+        <span class="fa fa-plus-circle"></span>&nbsp;&nbsp;Adicionar
+    </ContentTemplate>
+</telerik:RadButton>
+
+<telerik:RadButton runat="server" Width="100%" Skin="Silk" Font-Size="15px" Font-Names="Segoe UI" CssClass="pscBoton" ToolTip="Asociar" SkinID="pscBotonAsociar">
+    <ContentTemplate>
+        <span class="fa fa-plus-circle"></span>&nbsp;&nbsp;Asociar
+    </ContentTemplate>
+</telerik:RadButton>
+
+<telerik:RadButton runat="server" Width="100%" Skin="Silk" Font-Size="15px" Font-Names="Segoe UI" CssClass="pscBoton" ToolTip="Guardar" SkinID="pscBotonActualizar">
+    <ContentTemplate>
+        <span class="fa fa-floppy-o"></span>&nbsp;&nbsp;Actualizar
+    </ContentTemplate>
+</telerik:RadButton>
+
+
+
+
+<telerik:RadButton runat="server" Width="100%" Skin="Silk" Font-Size="15px" Font-Names="Segoe UI" CssClass="pscBoton" ToolTip="Volver" SkinID="pscBotonVolver">
+    <ContentTemplate>
+        <span class="fa fa-backward"></span>&nbsp;&nbsp;Volver
+    </ContentTemplate>
+</telerik:RadButton>
+
+<telerik:RadButton runat="server" Width="100%" Skin="Silk" Font-Size="15px" Font-Names="Segoe UI" CssClass="pscBoton" ToolTip="Cancelar" SkinID="pscBotonCancelar">
+    <ContentTemplate>
+        <span class="fa fa-times-circle"></span>&nbsp;&nbsp;Cancelar
+    </ContentTemplate>
+</telerik:RadButton>
+
+
+
+<telerik:RadButton runat="server" Width="100%" Skin="Silk" Font-Size="15px" Font-Names="Segoe UI" CssClass="pscBoton" ToolTip="Aprobar" SkinID="pscBotonAprobar">
+    <ContentTemplate>
+        <span class="fa fa-check-circle"></span>&nbsp;&nbsp;Aprobar
+    </ContentTemplate>
+</telerik:RadButton>
+
+<telerik:RadButton runat="server" Width="100%" Skin="Silk" Font-Size="15px" Font-Names="Segoe UI" CssClass="pscBoton" ToolTip="Rechazar" SkinID="pscBotonRechazar">
+    <ContentTemplate>
+        <span class="fa fa-times-circle"></span>&nbsp;&nbsp;Rechazar
+    </ContentTemplate>
+</telerik:RadButton>
+
+
+<telerik:RadButton runat="server" Width="100%" Skin="Silk" Font-Size="15px" Font-Names="Segoe UI" CssClass="pscBoton" ToolTip="Generar" SkinID="pscBotonGenerar">
+    <ContentTemplate>
+        <span class="fa fa-search"></span>&nbsp;&nbsp;Generar
+    </ContentTemplate>
+</telerik:RadButton>
+
+
+<telerik:RadButton runat="server" Skin="Silk" Font-Size="15px" Font-Names="Segoe UI" CssClass="pscBoton" ToolTip="Max" SkinID="pscBotonPlus">
+    <ContentTemplate>
+        <span class="fa fa-plus"></span>
+    </ContentTemplate>
+</telerik:RadButton>
+
+<telerik:RadButton runat="server"  Skin="Silk" Font-Size="15px" Font-Names="Segoe UI" CssClass="pscBoton" ToolTip="Min" SkinID="pscBotonMin">
+    <ContentTemplate>
+        <span class="fa fa-minus"></span>
+    </ContentTemplate>
+</telerik:RadButton>
+
+<telerik:RadButton runat="server" Width="50%" Skin="Silk" Font-Size="15px" Font-Names="Segoe UI" CssClass="pscBoton" ToolTip="Actualizar" SkinID="pscBotonActualizarPorcentaje50">
+    <ContentTemplate>
+        <span class="fa fa-floppy-o"></span>&nbsp;&nbsp;Actualizar
+    </ContentTemplate>
+</telerik:RadButton>
+
+<telerik:RadButton runat="server" Width="40%" Skin="Silk" Font-Size="15px" Font-Names="Segoe UI" CssClass="pscBoton" ToolTip="Buscar" SkinID="pscBotonBuscarPorcentaje40">
+    <ContentTemplate>
+        <span class="fa fa-search"></span>&nbsp;&nbsp;Buscar
+    </ContentTemplate>
+</telerik:RadButton>
+
+<telerik:RadButton runat="server" Width="100%" Skin="Silk" Font-Size="15px" Font-Names="Segoe UI" CssClass="pscBoton" ToolTip="Sincronizar" SkinID="pscBotonSincronizar">
+    <ContentTemplate>
+        <span class="fa fa-refresh"></span>&nbsp;&nbsp;Sincronizar
+    </ContentTemplate>
+</telerik:RadButton>

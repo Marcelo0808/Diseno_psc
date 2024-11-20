@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="/Content/font-awesome.min.css" rel="stylesheet" />
+    <link href="/Content/Site.css" rel="stylesheet" />
+    <link href="/Content/bootstrap-reboot.css" rel="stylesheet" />
+    <link href="~/App_Themes/Default/Default.css" rel="stylesheet" />
+    <style type="text/css">
+        .content {
+            flex: 1;
+        }
+
+        .container_login {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            min-width: 100%;
+            margin: 20px 0 25px 0;
+        }
+    
+        .jumbotron_login {
+            display: flex;
+            flex-wrap: wrap;
+            vertical-align: central;
+            border-radius: 10px;
+            min-width: 550px;
+            max-width: 450px;
+            width: 60%;
+            min-height: 250px;
+            padding: 5px;
+            background: linear-gradient(0deg, #5389ab 2%, #181a1c 98%);
+            box-shadow: 0 3px 5px 0 rgba(0,0,0,0.75);
+        }
+    
+        .form_login {
+            display: flex;
+            flex-direction: column;
+            color: white;
+            width: 40%;
+            padding: 0 15px;
+            margin: auto 0;
+        }
+    
+        .image_login {
+            display: flex;
+            flex-direction: column;
+            width: 60%;
+            padding: 10px 15px;
+            background-color: white;
+            border-radius: 16pc 10px 16pc 10px;
+            justify-content: center;
+            box-shadow: inset 3px 3px 5px 1px rgba(0,0,0,0.75);
+        }
+    
+        .logo_login {
+            width: 60%;
+            align-self: center;
+            vertical-align: middle;
+        }
+    
+        .textbox_login i {
+            position: relative;
+            top: -28px;
+            color: black;
+        }
+    
+        .btn_login {
+            border-radius: 10px !important;
+            max-width: 80%;
+            cursor: pointer;
+            padding: 10px 0 !important;
+            box-shadow: 0px 4px 8px -1px #424040;
+        }
+    
+        .validation_login {
+            font-size: 0.8rem;
+        }
+    
+        .container-validacionLogin {
+            width: 100%;
+            text-align: left;
+            margin: 8px 0px;
+        }
+    
+        .max-inputLogin {
+            max-width: 80% !important;
+            border-radius: 10px;
+            padding-left: 30px !important;
+            padding-right: 15px !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="body-content">
+        <div class="content">
+            <div class="container_login">
+                <div class="jumbotron_login">
+                    <div class="form_login">
+                        <div style="margin: 0 0 10px 0;">
+                            <h5 title="Plataforma de Servicios Compartidos">BIENVENIDO AL PSC</h5>
+                        </div>
+                        <div style="margin: 0 0 8px 0;">
+                            <h6>Ingrese su Usuario:</h6>
+                        </div>
+                        <div class="textbox_login">
+                            <input type="text" style="width: 100%;" class="max-inputLogin">
+                        </div>
+                        <div>
+                            <button class="btn_login" style="width: 100%;">Iniciar Sesión</button>
+                        </div>
+                        <div class="container-validacion">
+                            <!-- <span class="validation_login">Error: Campo Requerido</span>
+                            <span class="validation_login">Error: Cant. caracteres permitida (Min.5 Max.15)</span> -->
+                        </div>
+                    </div>
+                    <div class="image_login">
+                        <!-- <img src="/Images/Logo_USC_login.jpg" alt="UNIDAD DE SERVICIOS COMPARTIDOS"
+                            class="logo_login" /> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr />
+        <footer>
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <p style="color: #2dabc1; font-weight: bold;">&copy; 2023 - CASATORO - PSC - PLATAFORMA DE SERVICIOS
+                        COMPARTIDOS</p>
+                    <p style="color: red; font-weight: bold;">
+                        <Label runat="server" ID="Label_Modo"></Label>
+                    </p>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>

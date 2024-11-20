@@ -1,0 +1,109 @@
+﻿body {
+}
+
+fieldset, legend {
+    all: revert;
+}
+
+.jumbotron {
+    padding: 2rem 1rem;
+    margin-bottom: 2rem;
+    background-color: #e9ecef;
+    border-radius: .3rem;
+}
+
+.pscMaxWidth {
+    max-width: 100% !important;
+}
+
+.pscPrincipal {
+    padding: 10px;
+    background-color: white;
+    margin-top: 20px !important;
+    margin-bottom: 20px !important;
+    border-radius: 5px;
+}
+
+.pscTitulo {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+    color: white;
+    font-family: Segoe UI;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: steelblue;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px #c0c0c0;
+    text-transform: uppercase;
+    vertical-align: middle !important;
+}
+
+.pscTituloTexto {
+    padding-left: 15px !important;
+}
+
+.pscSubTitulo {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+    color: steelblue;
+    font-family: Segoe UI;
+    font-size: 15px;
+    font-weight: bold;
+    background-color: lightgrey;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px #c0c0c0;
+    text-transform: uppercase;
+}
+
+.pscNumeracion {
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-right: 5px;
+    color: white;
+    font-family: Segoe UI;
+    font-size: 15px;
+    font-weight: bold;
+    background-color: steelblue;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px #c0c0c0;
+}
+
+.pscContenido {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+    color: black;
+    font-family: Segoe UI;
+    font-size: 15px;
+    font-weight: bold;
+    background-color: white;
+    border-radius: 5px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: steelblue;
+    box-shadow: 2px 2px 2px #c0c0c0;
+}
+
+.pscBoton {
+    font-family: Segoe UI;
+    box-shadow: 2px 2px 2px steelblue;
+    max-width: 100% !important;
+}
+
+.pscAyuda {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+    color: #856404;
+    font-family: Segoe UI;
+    font-size: 13px;
+    background-color: #fff3cd;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px #c0c0c0;
+}
