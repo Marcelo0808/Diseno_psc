@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Estilos generales */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        /* Wrapper para contener el aside y el contenido */
+        .wrapper {
+            display: flex;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Estilos del aside */
+        .sidebar {
+            position: fixed;
+            /* Fijo a la izquierda */
+            top: 0;
+            left: 0;
+            width: 250px;
+            /* Ancho del menú */
+            height: 100%;
+            background-color: #333;
+            color: white;
+            transform: translateX(-100%);
+            /* El menú comienza oculto */
+            transition: transform 0.3s ease-in-out;
+        }
+
+        /* Cuando el menú está abierto */
+        .sidebar.open {
+            transform: translateX(0);
+        }
+
+        /* Estilos del contenido principal */
+        .content {
+            margin-left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            transition: margin-left 0.3s ease-in-out;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background-color: #fff;
+            z-index: 10;
+            padding: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        main {
+            padding-top: 50px;
+            /* Para que no se superponga al header */
+            margin-top: 50px;
+            /* Espacio debajo del header */
+            transition: margin-left 0.3s ease-in-out;
+            padding: 20px;
+        }
+
+        /* Cuando el menú está abierto, mover el contenido hacia la izquierda */
+        .content.open {
+            margin-left: 250px;
+            /* Mueve el contenido cuando el menú se abre */
+        }
+
+        main {
+            padding-left: 20px;
+        }
+
+        /* Estilos para cuando el menú está abierto */
+        .sidebar.open {
+            transform: translateX(0);
+        }
+
+        /* Estilo para el botón del menú */
+        button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <aside class="sidebar">
+            <!-- Menú lateral -->
+        </aside>
+        <div class="content">
+            <header>
+                <!-- Contenido del header -->
+            </header>
+            <main>
+                <!-- Contenido principal -->
+            </main>
+        </div>
+    </div>
+</body>
+<script>
+    // Seleccionamos el botón y el aside
+    const menuButton = document.querySelector('button');
+    const sidebar = document.querySelector('.sidebar');
+    const content = document.querySelector('.content');
+
+    // Cuando el botón es clickeado, alternamos la clase 'open' en el aside y el contenido
+    menuButton.addEventListener('click', () => {
+        sidebar.classList.toggle('open');
+        content.classList.toggle('open');
+    });
+</script>
+
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @keyframes beat {0%, 50%, 100% { transform: scale(1, 1); }
+        30%, 80% {transform: scale(0.7, 0.7);}
+    }
+
+        /* Curvas de tiempo*/
+
+        .easeIn {
+            animation: 6s ease-in 0s infinite beat;
+        }
+
+        .easeOut {
+            animation: 6s ease-out 0s infinite beat;
+        }
+
+        .easeInOut {
+            animation: 6s ease-in-out 0s infinite beat;
+        }
+
+
+        .linear {
+            animation: 6s ease-in-out 0s infinite beat;
+        }
+
+
+
+        /* Corazón */
+
+        .heart {
+            position: relative;
+            width: 100px;
+            height: 90px;
+        }
+
+
+        .heart:before,
+        .heart:after {
+            position: absolute;
+            content: "";
+            left: 50px;
+            top: 0;
+            width: 50px;
+            height: 80px;
+            background: #fc2e5a;
+            border-radius: 50px 50px 0 0;
+            transform: rotate(-45deg);
+            transform-origin: 0 100%;
+        }
+
+        .heart:after {
+            left: 0;
+            transform: rotate(45deg);
+            transform-origin: 100% 100%;
+        }
+
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <p>Ease in</p>
+        <div class="heart easeIn"></div>
+    </div>
+
+    <div>
+        <p>Ease out</p>
+        <div class="heart easeOut"></div>
+    </div>
+
+    <div>
+        <p>Ease in out</p>
+        <div class="heart easeInOut"></div>
+    </div>
+
+    <div>
+        <p>Linear</p>
+        <div class="heart linear"></div>
+    </div>
+</body>
+
+</html>
