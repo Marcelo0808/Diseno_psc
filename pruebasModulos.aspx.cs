@@ -10,10 +10,11 @@ using Tecnobiometric.Web.Security;
 using Microsoft.Ajax.Utilities;
 using System.Diagnostics.Metrics;
 using Telerik.Web.UI;
+using CasaToro.Portal.Comisiones.ENL.EntityDataModel;
 
 namespace CasaToro.Portal.Comisiones.Views.Account
 {
-    public partial class ModulosAutenticacion1 : System.Web.UI.Page
+    public partial class ModulosAutenticacion2 : System.Web.UI.Page
     {
         ModulosBL modulosBL;
         ErrorLog errorLog;
@@ -30,21 +31,45 @@ namespace CasaToro.Portal.Comisiones.Views.Account
             try
             {
                 modulosBL = new ModulosBL();
-                var modulos = modulosBL.GetEmpleadosModulos(1070969343);
+                var modulos = modulosBL.GetEmpleadosModulosLoginExternos(1070969343);
                 var categorias = modulos.DistinctBy(c => new { c.Modulos.CodigoCategoria, c.Modulos.ModulosCategorias.Categoria }).OrderBy(c => c.Modulos.ModulosCategorias.Prioridad).ToList();
+                int cantidadCatgeorias = categorias.Count();
+                List<EmpleadosModulos> modulosCompletos = new List<EmpleadosModulos>();
+                int posicionLista = 0;
                 foreach (var item in categorias)
                 {
-                    RadTab tab = new RadTab();
-                    tab.ToolTip = item.Modulos.ModulosCategorias.Categoria;
-                    tab.ImageUrl = "~/Images/Modulo/Categorias/" + item.Modulos.CodigoCategoria.ToString() + ".png";
+                    RadTab tab = new RadTab
+                    {
+                        ToolTip = item.Modulos.ModulosCategorias.Categoria,
+                        ImageUrl = "~/Images/Modulo/Categorias/" + item.Modulos.CodigoCategoria.ToString() + ".png"
+                    };
                     this.RadTabStrip_Categorias.Tabs.Add(tab);
                     RadPageView pageView = new RadPageView();
-                    UserControl uc = (UserControl)Page.LoadControl("wuc_Modulos.ascx");
+                    UserControl uc = (UserControl)Page.LoadControl("wuc_Modulos2.ascx");
                     ListView ListView_Modulos = (ListView)uc.FindControl("ListView_Modulos");
-                    ListView_Modulos.DataSource = modulos.Where(db => db.Modulos.CodigoCategoria == item.Modulos.CodigoCategoria).OrderBy(db => db.Modulos.Prioridad).ThenBy(db => db.Modulos.CodigoModulo);
+                    var modulosConsulta = modulos.Where(db => db.Modulos.CodigoCategoria == item.Modulos.CodigoCategoria).OrderBy(db => db.Modulos.Prioridad).ThenBy(db => db.Modulos.CodigoModulo);
+                    modulosCompletos.AddRange(modulosConsulta.ToList());
+                    ListView_Modulos.DataSource = modulosConsulta;
                     ListView_Modulos.DataBind();
                     pageView.Controls.Add(uc);
                     this.RadMultiPage_Categorias.PageViews.Add(pageView);
+                    posicionLista++;
+                    if (posicionLista == cantidadCatgeorias)
+                    {
+                        RadTab tabTodos = new RadTab
+                        {
+                            ToolTip = "Todos",
+                            ImageUrl = "~/Images/Modulo/Categorias/Todos.png"
+                        };
+                        this.RadTabStrip_Categorias.Tabs.Add(tabTodos);
+                        RadPageView pageViewTodos = new RadPageView();
+                        UserControl ucTodos = (UserControl)Page.LoadControl("wuc_Modulos1.ascx");
+                        ListView ListView_ModulosTodos = (ListView)ucTodos.FindControl("ListView_Modulos");
+                        ListView_ModulosTodos.DataSource = modulosCompletos;
+                        ListView_ModulosTodos.DataBind();
+                        pageViewTodos.Controls.Add(ucTodos);
+                        this.RadMultiPage_Categorias.PageViews.Add(pageViewTodos);
+                    }
                 }
             }
             catch (DALException ex)
