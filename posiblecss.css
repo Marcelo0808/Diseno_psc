@@ -1,0 +1,57 @@
+.MenuPrincipal {
+    width: 60px;
+    white-space: nowrap;
+    transition: width 0.3s ease-in-out;
+    height: 100vh;
+    background-color: #f5f5f5;
+}
+
+    .MenuPrincipal.expand {
+        width: auto;
+        position: fixed;
+    }
+
+        .MenuPrincipal.expand .rmVertical .rmItem .rmText {
+            display: block !important;
+        }
+
+        .MenuPrincipal.expand .rmRootGroup.rmVertical > .rmItem {
+            width: auto;
+        }
+
+        .MenuPrincipal.expand .rmRootGroup.rmVertical .rmRootLink .rmToggle {
+            display: block !important;
+        }
+
+        .MenuPrincipal.expand .rmRootGroup.rmVertical .rmRootLink {
+            padding-right: 2.5em !important;
+        }
+
+    .MenuPrincipal .rmLeftImage {
+        width: 32px !important;
+    }
+
+    .MenuPrincipal .rmRootGroup.rmVertical .rmRootLink .rmToggle {
+        display: none !important;
+    }
+
+    .MenuPrincipal .rmVertical ul.rmRootGroup > li.rmItem:first-child .rmText {
+        display: none !important;
+    }
+
+    /* .rmItem .rmText {
+        display: none !important;
+    }*/
+
+    .MenuPrincipal .rmRootGroup.rmVertical .rmRootLink {
+        display: flex !important;
+        align-items: center;
+    }
+
+.RadMenu .rmRootGroup.rmVertical .rmRootLink {
+    padding-right: unset !important;
+}
+
+.MenuPrincipal .rmRootGroup.rmVertical > .rmItem {
+    width: 60px;
+}
