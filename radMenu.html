@@ -1,211 +1,297 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
+  </head>
 
-<body>
-    <div tabindex="0" id="ctl00_LoginView_Principal_RadMenu_Principal" class="RadMenu RadMenu_Bootstrap MenuPrincipal"
-        style="z-index: 8000;">
-        <ul class="rmRootGroup rmToggleHandles rmVertical">
-            <li class="rmItem" style="z-index: 0;"><span title="Informes Facturas"
-                    class="rmLink rmRootLink rmExpand rmExpandRight" tabindex="0"><img alt="Informes Facturas"
-                        src="InformesFacturas.png" class="rmLeftImage"><span
-                        class="rmText">Indicadores Control de Consignaciones</span><span class="rmToggle"><span
-                            class="rmIcon">Toggle</span></span></span>
-                <div class="rmSlide"
-                    style="display: none; visibility: visible; width: 123px; height: 36px; left: 334px; top: 0px; z-index: 6; overflow: hidden;">
-                    <ul class="rmVertical rmGroup rmLevel1"
-                        style="top: 0px; left: -123px; display: block; visibility: visible; transition: none;">
-                        <li class="rmItem rmFirst rmLast"><a title="Facturas" class="rmLink"
-                                href="/CasaToro.Portal.Comisiones/Views/ControlConsignaciones/Facturas/ReportSelector_Informe_Facturas?ReportID=1"
-                                style="width: 62px;">Facturas</a></li>
-                    </ul>
-                </div>
-            </li>
-        </ul>
+  <body>
+    <div
+      tabindex="0"
+      id="ctl00_LoginView_Principal_RadMenu_Principal"
+      class="RadMenu RadMenu_Bootstrap MenuPrincipal"
+      style="z-index: 8000"
+    >
+      <ul class="rmRootGroup rmToggleHandles rmVertical">
+        <li class="rmItem" style="z-index: 0">
+          <span
+            title="Informes Facturas"
+            class="rmLink rmRootLink rmExpand rmExpandRight"
+            tabindex="0"
+            ><img
+              alt="Informes Facturas"
+              src="InformesFacturas.png"
+              class="rmLeftImage"
+            /><span class="rmText">Indicadores Control de Consignaciones</span
+            ><span class="rmToggle"
+              ><span class="rmIcon">Toggle</span></span
+            ></span
+          >
+          <div
+            class="rmSlide"
+            style="
+              display: none;
+              visibility: visible;
+              width: 123px;
+              height: 36px;
+              left: 334px;
+              top: 0px;
+              z-index: 6;
+              overflow: hidden;
+            "
+          >
+            <ul
+              class="rmVertical rmGroup rmLevel1"
+              style="
+                top: 0px;
+                left: -123px;
+                display: block;
+                visibility: visible;
+                transition: none;
+              "
+            >
+              <li class="rmItem rmFirst rmLast">
+                <a
+                  title="Facturas"
+                  class="rmLink"
+                  href="/CasaToro.Portal.Comisiones/Views/ControlConsignaciones/Facturas/ReportSelector_Informe_Facturas?ReportID=1"
+                  style="width: 62px"
+                  >Facturas</a
+                >
+              </li>
+            </ul>
+          </div>
+        </li>
+      </ul>
     </div>
     <style>
-        .RadMenu {
-            line-height: 1.42857143;
-            white-space: nowrap;
-            cursor: default;
-            position: relative;
-            z-index: 7000;
-            text-align: left;
-            outline: 0;
-        }
+      /* Contenedor del menú */
+      .menu-container {
+        position: relative;
+      }
 
-        .RadMenu ul.rmActive,
-        .RadMenu ul.rmRootGroup {
-            display: block;
-        }
+      /* Botón del menú hamburguesa */
+      .hamburger-menu {
+        background-color: transparent;
+        border: none;
+        font-size: 24px;
+        cursor: pointer;
+        margin-bottom: 10px;
+      }
 
-        .RadMenu ul.rmVertical,
-        .RadMenu ul.rmHorizontal,
-        .RadMenu ul.rmRootScrollGroup,
-        .RadMenu_Context ul.rmHorizontal {
-            margin: 0;
-            padding: 0;
-            position: relative;
-            left: 0;
-            float: left;
-        }
+      /* RadMenu colapsado */
+      .RadMenu_Bootstrap {
+        width: 50px; /* Ancho fijo cuando está colapsado */
+        overflow: hidden;
+        white-space: nowrap; /* Evita el salto de texto */
+        transition: width 0.3s ease-in-out; /* Transición suave */
+      }
 
-        .RadMenu_Bootstrap .rmRootGroup {
-            border-color: #dedede;
-            color: #333;
-            background-color: whitesmoke;
-            border-radius: 4px;
-        }
+      /* Oculta el texto y los iconos de submenú en estado colapsado */
+      .RadMenu_Bootstrap .rmText,
+      .RadMenu_Bootstrap .rmExpandIcon {
+        display: none;
+      }
 
-        .RadMenu .rmGroup,
-        .RadMenu .rmRootGroup,
-        .RadMenu .rmMultiColumn,
-        .RadMenu .rmPopup {
-            box-sizing: content-box;
-            border-width: 1px;
-            border-style: solid;
-            background-position: 0 0;
-            top: 0;
-        }
+      /* RadMenu expandido */
+      .RadMenu_Bootstrap.expanded {
+        width: auto; /* Ajusta el ancho dinámicamente según el contenido */
+        min-width: 200px; /* Ancho mínimo */
+        max-width: 100%; /* Evita que exceda el tamaño del contenedor */
+      }
 
-        .RadMenu_Bootstrap .rmRootGroup.rmVertical>.rmItem,
-        .RadMenu_Bootstrap .rmRootGroup.rmVertical>.rmRootScrollGroup>.rmItem {
-            float: none;
-        }
+      /* Muestra el texto y los iconos de submenú al expandir */
+      .RadMenu_Bootstrap.expanded .rmText,
+      .RadMenu_Bootstrap.expanded .rmExpandIcon {
+        display: inline-block;
+      }
 
-        .RadMenu_Bootstrap .rmRootGroup>.rmItem,
-        .RadMenu_Bootstrap .rmRootGroup>.rmRootScrollGroup>.rmItem {
-            border-color: transparent;
-        }
+      /* Opcional: Ajusta el contenido */
+      .RadMenu_Bootstrap .rmLink {
+        display: flex;
+        align-items: center;
+        gap: 10px; /* Espaciado entre la imagen y el texto */
+      }
+      .RadMenu {
+        line-height: 1.42857143;
+        white-space: nowrap;
+        cursor: default;
+        position: relative;
+        z-index: 7000;
+        text-align: left;
+        outline: 0;
+      }
 
-        .RadMenu .rmItem {
-            color: inherit;
-            display: block;
-            position: relative;
-        }
+      .RadMenu ul.rmActive,
+      .RadMenu ul.rmRootGroup {
+        display: block;
+      }
 
-        .RadMenu .rmItem {
-            padding: 0;
-        }
+      .RadMenu ul.rmVertical,
+      .RadMenu ul.rmHorizontal,
+      .RadMenu ul.rmRootScrollGroup,
+      .RadMenu_Context ul.rmHorizontal {
+        margin: 0;
+        padding: 0;
+        position: relative;
+        left: 0;
+        float: left;
+      }
 
-        .RadMenu .rmItem {
-            list-style: none;
-            line-height: inherit;
-        }
+      .RadMenu_Bootstrap .rmRootGroup {
+        border-color: #dedede;
+        color: #333;
+        background-color: whitesmoke;
+        border-radius: 4px;
+      }
 
-        .RadMenu .rmRootGroup.rmVertical .rmRootLink {
-            padding-right: 2.5em;
-        }
+      .RadMenu .rmGroup,
+      .RadMenu .rmRootGroup,
+      .RadMenu .rmMultiColumn,
+      .RadMenu .rmPopup {
+        box-sizing: content-box;
+        border-width: 1px;
+        border-style: solid;
+        background-position: 0 0;
+        top: 0;
+      }
 
-        .RadMenu_Bootstrap .rmSelected .rmRootLink,
-        .RadMenu_Bootstrap .rmExpanded .rmRootLink {
-            color: #333;
-            background-color: #e4e4e4;
-            box-shadow: 0 3px 5px rgba(0, 0, 0, 0.13) inset;
-        }
+      .RadMenu_Bootstrap .rmRootGroup.rmVertical > .rmItem,
+      .RadMenu_Bootstrap
+        .rmRootGroup.rmVertical
+        > .rmRootScrollGroup
+        > .rmItem {
+        float: none;
+      }
 
-        .RadMenu_Bootstrap .rmVertical .rmRootLink {
-            padding-top: 10px;
-            padding-bottom: 10px;
-        }
+      .RadMenu_Bootstrap .rmRootGroup > .rmItem,
+      .RadMenu_Bootstrap .rmRootGroup > .rmRootScrollGroup > .rmItem {
+        border-color: transparent;
+      }
 
-        .RadMenu_Bootstrap .rmRootGroup .rmRootLink {
-            padding: 15px;
-        }
+      .RadMenu .rmItem {
+        color: inherit;
+        display: block;
+        position: relative;
+      }
 
-        .RadMenu .rmVertical .rmLink,
-        .RadMenu .rmHorizontal .rmVertical .rmLink {
-            float: none;
-        }
+      .RadMenu .rmItem {
+        padding: 0;
+      }
 
-        .RadMenu .rmLink {
-            outline: 0;
-            text-decoration: none;
-            cursor: pointer;
-            display: block;
-            position: relative;
-            overflow: hidden;
-            box-sizing: content-box;
-        }
+      .RadMenu .rmItem {
+        list-style: none;
+        line-height: inherit;
+      }
 
-        .RadMenu .rmRootGroup .rmImage,
-        .RadMenu .rmRootGroup .rmLeftImage {
-            margin: 0 .4em 0 -.4em;
-        }
+      .RadMenu .rmRootGroup.rmVertical .rmRootLink {
+        padding-right: 2.5em;
+      }
 
-        .RadMenu .rmImage,
-        .RadMenu .rmLeftImage {
-            min-width: 16px;
-            vertical-align: middle;
-            float: left;
-        }
+      .RadMenu_Bootstrap .rmSelected .rmRootLink,
+      .RadMenu_Bootstrap .rmExpanded .rmRootLink {
+        color: #333;
+        background-color: #e4e4e4;
+        box-shadow: 0 3px 5px rgba(0, 0, 0, 0.13) inset;
+      }
 
-        .RadMenu .rmLeftImage {
-            border: 0;
-        }
+      .RadMenu_Bootstrap .rmVertical .rmRootLink {
+        padding-top: 10px;
+        padding-bottom: 10px;
+      }
 
-        .MenuPrincipal .rmLeftImage {
-            width: 32px !important;
-        }
+      .RadMenu_Bootstrap .rmRootGroup .rmRootLink {
+        padding: 15px;
+      }
 
-        .RadMenu_Bootstrap .rmRootLink .rmText,
-        .RadMenu_Bootstrap .rmVertical .rmRootLink .rmText {
-            padding: 0;
-        }
+      .RadMenu .rmVertical .rmLink,
+      .RadMenu .rmHorizontal .rmVertical .rmLink {
+        float: none;
+      }
 
-        .RadMenu .rmRootGroup .rmRootLink .rmText {
-            float: left;
-        }
+      .RadMenu .rmLink {
+        outline: 0;
+        text-decoration: none;
+        cursor: pointer;
+        display: block;
+        position: relative;
+        overflow: hidden;
+        box-sizing: content-box;
+      }
 
-        .RadMenu .rmVertical .rmItem .rmText {
-            display: block;
-        }
+      .RadMenu .rmRootGroup .rmImage,
+      .RadMenu .rmRootGroup .rmLeftImage {
+        margin: 0 0.4em 0 -0.4em;
+      }
 
-        .RadMenu .rmText {
-            vertical-align: middle;
-        }
+      .RadMenu .rmImage,
+      .RadMenu .rmLeftImage {
+        min-width: 16px;
+        vertical-align: middle;
+        float: left;
+      }
 
-        .RadMenu .rmRootGroup.rmVertical .rmRootLink .rmToggle {
-            position: absolute;
-            width: 2em;
-            height: 100%;
-            margin: 0;
-        }
+      .RadMenu .rmLeftImage {
+        border: 0;
+      }
 
-        .RadMenu .rmRootGroup .rmRootLink .rmToggle {
-            float: left;
-        }
+      .MenuPrincipal .rmLeftImage {
+        width: 32px !important;
+      }
 
-        .RadMenu .rmToggle {
-            top: 0;
-            left: auto;
-            right: 0;
-        }
+      .RadMenu_Bootstrap .rmRootLink .rmText,
+      .RadMenu_Bootstrap .rmVertical .rmRootLink .rmText {
+        padding: 0;
+      }
 
-        .RadMenu .rmToggle .rmIcon {
-            display: block;
-        }
+      .RadMenu .rmRootGroup .rmRootLink .rmText {
+        float: left;
+      }
 
-        .RadMenu .rmIcon {
-            margin: -.5em 0 0 -.5em;
-            width: 1em;
-            height: 1em;
-            background-repeat: no-repeat;
-            font-size: 16px;
-            line-height: 1;
-            font-family: "WebComponentsIcons";
-            text-indent: -999em;
-            overflow: hidden;
-            position: absolute;
-            left: 50%;
-            top: 50%;
-        }
+      .RadMenu .rmVertical .rmItem .rmText {
+        display: block;
+      }
+
+      .RadMenu .rmText {
+        vertical-align: middle;
+      }
+
+      .RadMenu .rmRootGroup.rmVertical .rmRootLink .rmToggle {
+        position: absolute;
+        width: 2em;
+        height: 100%;
+        margin: 0;
+      }
+
+      .RadMenu .rmRootGroup .rmRootLink .rmToggle {
+        float: left;
+      }
+
+      .RadMenu .rmToggle {
+        top: 0;
+        left: auto;
+        right: 0;
+      }
+
+      .RadMenu .rmToggle .rmIcon {
+        display: block;
+      }
+
+      .RadMenu .rmIcon {
+        margin: -0.5em 0 0 -0.5em;
+        width: 1em;
+        height: 1em;
+        background-repeat: no-repeat;
+        font-size: 16px;
+        line-height: 1;
+        font-family: "WebComponentsIcons";
+        text-indent: -999em;
+        overflow: hidden;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+      }
     </style>
-</body>
-
+  </body>
 </html>
