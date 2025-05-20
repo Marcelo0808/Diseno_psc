@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tabla con Flexbox</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+
+    /* Contenedor principal que simula la tabla */
+    .tabla {
+      display: flex;
+      flex-direction: column;
+      border: 1px solid black;
+      width: 100%;
+    }
+
+    /* Fila */
+    .fila {
+      display: flex;
+      border-bottom: 1px solid black;
+    }
+
+    /* Celda */
+    .celda {
+      border-right: 1px solid black;
+      padding: 10px;
+      flex: 1;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Ajuste de tamaños */
+    .columna-grande {
+      flex: 3;
+    }
+
+    .columna-pequeña {
+      flex: 1;
+    }
+
+    /* Para el rowspan manual */
+    .celda.rowspan-3 {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      flex: 1;
+    }
+
+    /* Encabezado */
+    .header {
+      font-weight: bold;
+      background-color: #f4f4f4;
+    }
+
+    /* Contenedor de selects */
+    .select-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    select {
+      padding: 5px;
+    }
+
+    /* Eliminar el borde derecho de la última celda en cada fila */
+    .fila .celda:last-child {
+      border-right: none;
+    }
+
+    /* Última fila sin borde inferior */
+    .tabla .fila:last-child {
+      border-bottom: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="tabla">
+    <!-- Primera fila (encabezados) -->
+    <div class="fila">
+      <div class="celda header columna-pequeña"></div>
+      <div class="celda header columna-grande">Lista de Operaciones</div>
+      <div class="celda header columna-pequeña">RS Frontal</div>
+      <div class="celda header columna-pequeña">RS Trasero</div>
+      <div class="celda header columna-pequeña">ZE</div>
+    </div>
+
+    <!-- Segunda fila (subencabezados) -->
+    <div class="fila">
+      <div class="celda columna-pequeña"></div>
+      <div class="celda columna-grande"></div>
+      <div class="celda columna-pequeña">Frontal</div>
+      <div class="celda columna-pequeña">Trasero</div>
+      <div class="celda columna-pequeña"></div>
+    </div>
+
+    <!-- Tercera fila (Campo visual con rowspan) -->
+    <div class="fila">
+      <div class="celda rowspan-3 columna-pequeña">Campo visual</div>
+      <div class="celda columna-grande">Lorem ipsum dolor sit...</div>
+      <div class="celda select-container columna-pequeña">
+        <select>
+          <option value="opcion1">Opción 1</option>
+          <option value="opcion2">Opción 2</option>
+        </select>
+      </div>
+      <div class="celda select-container columna-pequeña">
+        <select>
+          <option value="opcion1">Opción 1</option>
+          <option value="opcion2">Opción 2</option>
+        </select>
+      </div>
+      <div class="celda select-container columna-pequeña">
+        <select>
+          <option value="opcion1">Opción 1</option>
+          <option value="opcion2">Opción 2</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Cuarta fila -->
+    <div class="fila">
+      <div class="celda columna-grande">Lorem ipsum dolor sit...</div>
+      <div class="celda select-container columna-pequeña">
+        <select>
+          <option value="opcion1">Opción 1</option>
+          <option value="opcion2">Opción 2</option>
+        </select>
+      </div>
+      <div class="celda select-container columna-pequeña">
+        <select>
+          <option value="opcion1">Opción 1</option>
+          <option value="opcion2">Opción 2</option>
+        </select>
+      </div>
+      <div class="celda select-container columna-pequeña">
+        <select>
+          <option value="opcion1">Opción 1</option>
+          <option value="opcion2">Opción 2</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Quinta fila -->
+    <div class="fila">
+      <div class="celda columna-grande">Lorem ipsum dolor sit...</div>
+      <div class="celda select-container columna-pequeña">
+        <select>
+          <option value="opcion1">Opción 1</option>
+          <option value="opcion2">Opción 2</option>
+        </select>
+      </div>
+      <div class="celda select-container columna-pequeña">
+        <select>
+          <option value="opcion1">Opción 1</option>
+          <option value="opcion2">Opción 2</option>
+        </select>
+      </div>
+      <div class="celda select-container columna-pequeña">
+        <select>
+          <option value="opcion1">Opción 1</option>
+          <option value="opcion2">Opción 2</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

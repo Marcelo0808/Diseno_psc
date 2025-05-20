@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tabla con Flexbox</title>
+    <style>
+      /* Estilos generales */
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+      }
+
+      .table-container {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+      }
+
+      .table-row {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+      }
+
+      .table-cell {
+        display: flex;
+        align-items: center;
+        width: 150px;
+      }
+
+      .operations-list {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        width: 300px;
+      }
+
+      .operations-list div {
+        height: 60px;
+        overflow: hidden;
+      }
+
+      select {
+        padding: 5px;
+        font-size: 14px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="table-container">
+      <!-- Encabezado -->
+      <div class="table-row">
+        <div class="table-cell"><strong>Nombre</strong></div>
+        <div class="table-cell operations-list"><strong>Lista de operaciones</strong></div>
+        <div class="table-cell"><strong>Frontal</strong></div>
+        <div class="table-cell"><strong>Otro select</strong></div>
+        <div class="table-cell"><strong>Otro select</strong></div>
+      </div>
+
+      <!-- Fila 1 con varias operaciones -->
+      <div class="table-row">
+        <div class="table-cell">Juan</div>
+        <div class="table-cell operations-list">
+          <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, ipsa consequuntur eius neque alias omnis, magni odit corrupti nostrum dignissimos veritatis, aliquam soluta facilis maxime quos doloremque nobis corporis fuga.</div>
+          <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, ipsa consequuntur eius neque alias omnis, magni odit corrupti nostrum dignissimos veritatis, aliquam soluta facilis maxime quos doloremque nobis corporis fuga.</div>
+          <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, ipsa consequuntur eius neque alias omnis, magni odit corrupti nostrum dignissimos veritatis, aliquam soluta facilis maxime quos doloremque nobis corporis fuga.</div>
+        </div>
+        <div class="table-cell">
+          <select>
+            <option value="op1">Opc 1</option>
+            <option value="op2">Opc 2</option>
+            <option value="op3">Opc 3</option>
+          </select>
+        </div>
+        <div class="table-cell">
+          <select>
+            <option value="op1">Opc 1</option>
+            <option value="op2">Opc 2</option>
+            <option value="op3">Opc 3</option>
+          </select>
+        </div>
+        <div class="table-cell">
+          <select>
+            <option value="op1">Opc 1</option>
+            <option value="op2">Opc 2</option>
+            <option value="op3">Opc 3</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Fila 2 con diferentes operaciones -->
+      <div class="table-row">
+        <div class="table-cell">Ana</div>
+        <div class="table-cell operations-list">
+          <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, ipsa consequuntur eius neque alias omnis, magni odit corrupti nostrum dignissimos veritatis, aliquam soluta facilis maxime quos doloremque nobis corporis fuga.</div>
+          <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, ipsa consequuntur eius neque alias omnis, magni odit corrupti nostrum dignissimos veritatis, aliquam soluta facilis maxime quos doloremque nobis corporis fuga.</div>
+        </div>
+        <div class="table-cell">
+          <select>
+            <option value="op1">Opc 1</option>
+            <option value="op2">Opc 2</option>
+            <option value="op3">Opc 3</option>
+          </select>
+        </div>
+        <div class="table-cell">
+          <select>
+            <option value="op1">Opc 1</option>
+            <option value="op2">Opc 2</option>
+            <option value="op3">Opc 3</option>
+          </select>
+        </div>
+        <div class="table-cell">
+          <select>
+            <option value="op1">Opc 1</option>
+            <option value="op2">Opc 2</option>
+            <option value="op3">Opc 3</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Puedes agregar más filas con la misma estructura -->
+    </div>
+  </body>
+</html>

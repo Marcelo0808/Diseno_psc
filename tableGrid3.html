@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tabla con Flexbox</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+
+    /* Contenedor principal que simula la tabla */
+    .tabla {
+      display: grid;
+      grid-template-columns: 1fr 3fr 1fr 1fr 1fr;
+      border: 1px solid black;
+      width: 100%;
+    }
+
+    /* Estilos generales para "celdas" */
+    .celda {
+      border: 1px solid black;
+      padding: 10px;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Encabezado */
+    .header {
+      font-weight: bold;
+      background-color: #f4f4f4;
+    }
+
+    /* Para ocupar múltiples columnas */
+    .colspan-2 {
+      grid-column: span 2;
+    }
+
+    /* Para ocupar múltiples filas */
+    .rowspan-3 {
+      grid-row: span 3;
+    }
+
+    /* Contenedor de selects */
+    .select-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    select {
+      padding: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="tabla">
+    <!-- Primera fila (encabezados) -->
+    <div class="celda header"></div>
+    <div class="celda header">Lista de Operaciones</div>
+    <div class="celda header colspan-2">RS</div>
+    <div class="celda header">ZE</div>
+
+    <!-- Segunda fila (subencabezados) -->
+    <div class="celda"></div>
+    <div class="celda"></div>
+    <div class="celda">Frontal</div>
+    <div class="celda">Trasero</div>
+    <div class="celda"></div>
+
+    <!-- Tercera fila -->
+    <div class="celda rowspan-3">Campo visual</div>
+    <div class="celda description">Lorem ipsum dolor sit...</div>
+    <div class="celda select-container">
+      <select>
+        <option value="opcion1">Opción 1</option>
+        <option value="opcion2">Opción 2</option>
+      </select>
+    </div>
+    <div class="celda select-container">
+      <select>
+        <option value="opcion1">Opción 1</option>
+        <option value="opcion2">Opción 2</option>
+      </select>
+    </div>
+    <div class="celda select-container">
+      <select>
+        <option value="opcion1">Opción 1</option>
+        <option value="opcion2">Opción 2</option>
+      </select>
+    </div>
+
+    <!-- Cuarta fila -->
+    <div class="celda">Lorem ipsum dolor sit...</div>
+    <div class="celda select-container">
+      <select>
+        <option value="opcion1">Opción 1</option>
+        <option value="opcion2">Opción 2</option>
+      </select>
+    </div>
+    <div class="celda select-container">
+      <select>
+        <option value="opcion1">Opción 1</option>
+        <option value="opcion2">Opción 2</option>
+      </select>
+    </div>
+    <div class="celda select-container">
+      <select>
+        <option value="opcion1">Opción 1</option>
+        <option value="opcion2">Opción 2</option>
+      </select>
+    </div>
+
+    <!-- Quinta fila -->
+    <div class="celda">Lorem ipsum dolor sit...</div>
+    <div class="celda select-container">
+      <select>
+        <option value="opcion1">Opción 1</option>
+        <option value="opcion2">Opción 2</option>
+      </select>
+    </div>
+    <div class="celda select-container">
+      <select>
+        <option value="opcion1">Opción 1</option>
+        <option value="opcion2">Opción 2</option>
+      </select>
+    </div>
+    <div class="celda select-container">
+      <select>
+        <option value="opcion1">Opción 1</option>
+        <option value="opcion2">Opción 2</option>
+      </select>
+    </div>
+  </div>
+
+</body>
+</html>
