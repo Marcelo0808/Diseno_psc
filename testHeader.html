@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Header con logo y logout</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #f0f4f8;
+      padding: 10px 20px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+
+    .user-info-container {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .user-text {
+      display: flex;
+      flex-direction: column;
+      text-align: right;
+      font-size: 0.9rem;
+    }
+
+    .user-text .name {
+      font-weight: bold;
+    }
+
+    .logout-icon {
+      font-size: 1.2rem;
+      color: #e63946;
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+
+    .logout-icon:hover {
+      color: #b51d28;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">
+      <!-- Puedes poner una imagen aquí si prefieres -->
+      <img src="logo.png" alt="Logo" style="height: 40px;">
+    </div>
+
+    <div class="user-info-container">
+      <div class="user-text">
+        <span class="name">Juan Pérez</span>
+        <span class="role">Administrador</span>
+      </div>
+      <i class="fas fa-sign-out-alt logout-icon" title="Cerrar sesión"></i>
+    </div>
+  </header>
+  <main>
+    <h1>hola mundo</h1>
+  </main>
+
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .card-back {
+        background: url("/Images/bonoTrasera.png") no-repeat center center;
+        background-size: cover;
+        padding: 24px;
+        color: #424242;
+        border-radius: 12px;
+        font-family: "Arial", sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Centra horizontalmente los elementos */
+        justify-content: center;
+        text-align: center;
+        height: 100%; /* Asegura alineación vertical si necesario */
+        box-sizing: border-box;
+      }
+
+      .card-back h3 {
+        color: #6a1b9a;
+        font-size: 1.4rem;
+        margin-bottom: 12px;
+      }
+
+      .card-back .time-card {
+        background-color: #e3f2fd; /* Azul claro */
+        border: 1px solid #90caf9;
+        border-radius: 8px;
+        padding: 8px 16px;
+        font-weight: bold;
+        color: #1e88e5;
+        margin-bottom: 16px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      .card-back p {
+        font-size: 0.95rem;
+        line-height: 1.5;
+        color: #424242;
+        max-width: 300px; /* Limita el ancho para mejor lectura */
+        text-align: justify; /* Justifica el párrafo */
+        margin-bottom: 20px;
+        font-weight: bold;
+      }
+
+      .card-back button {
+        background-color: #6a1b9a;
+        color: #fff;
+        font-weight: bold;
+        border: none;
+        border-radius: 8px;
+        padding: 10px 20px;
+        margin-top: 20px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      .card-back button:hover {
+        background-color: #4a148c;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card-back">
+      <h3>Celebra tu cumpleaños</h3>
+      <div class="time-card">Medio día</div>
+      <p>
+        Queremos que disfrutes este día especial con tus seres queridos, por eso
+        tienes el beneficio de tomar medio día de cumpleaños, el cual puedes
+        tomar en la mañana o en la tarde.
+      </p>
+      <button>Redimir</button>
+    </div>
+  </body>
+</html>

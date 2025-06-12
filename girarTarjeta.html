@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      button {
+        border: solid 2px;
+        padding: 0.5rem;
+        border-radius: 0.25rem;
+        font-weight: 700;
+      }
+
+      .container {
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: auto;
+      }
+
+      .card {
+        margin-top: 1rem;
+        min-height: 300px;
+        width: 250px;
+        position: relative;
+        border-radius: 0.25rem;
+      }
+
+      .cardBack {
+        transform: rotateY(180deg);
+        transform: perspective(1000px) rotateY(180deg);
+        background-color: #ebf4ff;
+      }
+
+      .cardBack.flipped {
+        transform: rotateY(0deg);
+        transform: perspective(1000px) rotateY(0deg);
+      }
+
+      .cardFront {
+        transform: rotateY(0deg);
+        transform: perspective(1000px) rotateY(0deg);
+      }
+
+      .cardFront.flipped {
+        transform: perspective(1000px) rotateY(180deg);
+        transform: perspective(1000px) rotateY(-180deg);
+      }
+
+      .cardFront,
+      .cardBack {
+        box-sizing: border-box;
+        border-radius: 0.25rem;
+        height: 100%;
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+          0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        width: 100%;
+        transition: transform 0.5s ease;
+        position: absolute;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        background-color: #ebf4ff;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <button type="button" id="flip-btn">Flip Card</button>
+      <div class="card">
+        <div id="back" class="cardBack">Back</div>
+        <div id="front" class="cardFront">Front</div>
+      </div>
+    </div>
+    <script>
+      const front = document.getElementById("front");
+      const back = document.getElementById("back");
+      const btn = document.getElementById("flip-btn");
+      function handleFlip() {
+        front.classList.toggle("flipped");
+        back.classList.toggle("flipped");
+      }
+      btn.addEventListener("click", handleFlip);
+    </script>
+  </body>
+</html>
